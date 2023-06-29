@@ -31,7 +31,7 @@ module "eks_iam_role" {
   enabled = local.iam_role_enabled
 
   aws_account_number          = var.aws_account_number
-  aws_iam_policy_document     = local.iam_policy_enabled ? [module.eks_iam_policy.json] : ["{}"]
+  aws_iam_policy_document     = local.iam_policy_enabled ? [module.eks_iam_policy.json] : []
   aws_partition               = var.aws_partition
   eks_cluster_oidc_issuer_url = var.eks_cluster_oidc_issuer_url
   service_account_name        = var.service_account_name
